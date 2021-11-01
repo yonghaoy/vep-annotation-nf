@@ -46,7 +46,7 @@ process download_ref {
 
     script:
     """
-    curl -O ftp://ftp.ensembl.org/pub/release-96/variation/indexed_vep_cache/homo_sapiens_vep_96_GRCh37.tar.gz && \
+    gsutil $WORKSPACE_BUCKET/homo_sapiens_vep_96_GRCh37.tar.gz && \
     mkdir -p homo_sapiens_vep_96_GRCh37 && \
     mv homo_sapiens_vep_96_GRCh37.tar.gz homo_sapiens_vep_96_GRCh37/ && \
     (
